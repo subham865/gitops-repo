@@ -14,22 +14,17 @@ spec:
   interval: 10s
   targetNamespace: --source=GitRepository/5-demo-source-git-bb-app
   values:
-    fullnameOverride: ""
     image:
       pullPolicy: Always
       repository: siddharth67/block-buster-dev:7.5.0
       tag: ""
-    imagePullSecrets: []
     labels:
-      app:
-        env: uat
-        name: bb-app
-        version: 7.x.x
-    nameOverride: ""
+      env: uat
+      name: bb-app
+      version: 7.5.0
     namespace:
       name: 5-demo
-    replicaCount: 1
+    replicaCount: 2
     service:
-      port: 80
-      targetPort: 80
-      type: ClusterIP
+      nodePort: 30005
+      type: NodePort
