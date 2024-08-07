@@ -10,9 +10,10 @@ spec:
       chart: helm-chart
       reconcileStrategy: ChartVersion
       sourceRef:
-        name: ""
+        kind: GitRepository
+        name: 5-demo-source-git-bb-app
   interval: 10s
-  targetNamespace: --source=GitRepository/5-demo-source-git-bb-app
+  targetNamespace: 5-demo
   values:
     image:
       pullPolicy: Always
