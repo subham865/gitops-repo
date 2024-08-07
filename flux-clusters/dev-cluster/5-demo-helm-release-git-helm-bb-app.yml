@@ -15,17 +15,22 @@ spec:
   interval: 10s
   targetNamespace: 5-demo
   values:
+    fullnameOverride: ""
     image:
       pullPolicy: Always
       repository: siddharth67/block-buster-dev:7.5.0
       tag: ""
+    imagePullSecrets: []
     labels:
       app:
-        env: dev
-        name: block-buster
+        env: uat
+        name: bb-app
         version: 7.5.0
+    nameOverride: ""
     namespace:
       name: 5-demo
-    replicaCount: 2
+    replicaCount: 1
     service:
-      type: NodePort
+      port: 80
+      targetPort: 80
+      type: ClusterIP
