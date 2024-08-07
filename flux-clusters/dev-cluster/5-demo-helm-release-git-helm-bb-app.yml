@@ -20,9 +20,10 @@ spec:
       repository: siddharth67/block-buster-dev:7.5.0
       tag: ""
     labels:
-      env: uat
-      name: bb-app
-      version: 7.5.0
+      app:
+        env: dev
+        name: block-buster
+        version: 7.5.0
     namespace:
       name: 5-demo
     replicaCount: 2
