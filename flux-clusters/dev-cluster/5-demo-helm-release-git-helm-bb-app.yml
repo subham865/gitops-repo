@@ -31,6 +31,7 @@ spec:
       name: 5-demo
     replicaCount: 1
     service:
+      nodePort: 30007
       port: 80
       targetPort: 80
-      type: ClusterIP
+      type: NodePort
